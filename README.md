@@ -6,7 +6,7 @@
 * Este projeto terá como base um rádio touchscreen onde no futuro poderá ser implementado num automóvel.
 * Já existem imensos produtos no mercado semelhantes ao nosso. Um carro que seja fabricado aos dias de hoje, já tem um rádio com um ecrã tátil. Para aqueles carros mais antigos que não tenham esta opção de origem, irá ser possível integrar o nosso produto no veículo.
 Um exemplo de um produto que já exista no mercado: https://pt.gearbest.com/car-dvd-player/pp_1084547.html?wid=1433363&currency=EUR&vip=14577034&gclid=Cj0KCQjwoebsBRCHARIsAC3JP0LDylEhOcPkuHmaoFBDafUTAtD00kn8RMf7mRPMUFY6ozhTdxOzB2AaAhe4EALw_wcB [1]
-* Este produto é bastante útil nos dias de hoje, pois os jovens de hoje cada vez mais preferem um ecrã tátil a botões e os automóveis estão a abandonar os botões dos tabliers e a apostar em ecrãs táteis devido aos custos.
+* Este produto é bastante útil nos dias de hoje, pois os jovens de hoje cada vez mais preferem um ecrã tátil a botões e os automóveis estão a abandonar os botões dos tabliers e a apostar em ecrãs táteis devido aos custos. No entanto, este ecrã não será touch mas sim controlado pelo rato devido aos limites da tecnologia que iremos utilizar.
 ## Cenários
 ### Cenário Principal
 O produto terá os seguintes menús:
