@@ -15,7 +15,11 @@ O produto terá os seguintes menús:
 * Telefone: Menú onde será possível digitar os números para contactar alguém. Histórico de registo de chamadas. Possibilidade de gravar um novo contacto.
 * GPS: Este menú irá abrir uma imagem de um mapa para simular um GPS (exploração deste menu como cenário secundário)
 * Música: Possibilidade de criar / editar / eliminar playlist's por utilizador (não estará planeado neste cenário a possiblidade de ser possível ouvir as músicas, deverá ser apenas visual).
-* Radio: Possibilidade escolher a estação de rádio (não estará planeado neste cenário a possiblidade de ser possível ouvir as músicas, deverá ser apenas visual).
+* Rádio: Possibilidade escolher a estação de rádio (não estará planeado neste cenário a possiblidade de ser possível ouvir as músicas, deverá ser apenas visual).
+### Cenário Secundário
+* GPS: Em vez do menu ser apenas uma imagem fixa de um GPS, ser possível aceder a uma api que permita ativar as funcionalidades de um GPS. Fazer rotas, guardar locais onde o utilizador frequente várias vezes (casa/trabalho).
+* Música: Haver a possibilidade de tocar as playlists, mudar de música, aumentar e baixar o volume.
+* Rádio: Ser possível aceder à frequência FM, assim como mudar de estação, aumentar e baixar o volume.
 
 ## Referências
 [1] Gearbest. RM - CT0012 Player Android 6.0 Bluetooth GPS Stereo para Carro - Preto	2. Acedido em 06/10/2019: https://pt.gearbest.com/car-dvd-player/pp_1084547.html?wid=1433363&currency=EUR&vip=14577034&gclid=Cj0KCQjwoebsBRCHARIsAC3JP0LDylEhOcPkuHmaoFBDafUTAtD00kn8RMf7mRPMUFY6ozhTdxOzB2AaAhe4EALw_wcB 
