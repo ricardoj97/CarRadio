@@ -23,5 +23,8 @@ O condutor ao ligar o carro, escolhe de imediato o seu utilizador para carregar 
 * O utilizador caso pretenda adicionar alguma música a uma playlist deverá escolher o seu perfil, ir ao menu das musicas (menu principal), escolher a música (poderá ser a partir da playlist ou da secção de géneros(onde estão todas as músicas de todos os utilizadores agrupadas por género)), ficar a pressionar e escolher a opção 'Adicionar à playlist' e escolher a playlist.
 
 ## Referências
-[1] Gearbest. RM - CT0012 Player Android 6.0 Bluetooth GPS Stereo para Carro - Preto	2. Acedido em 06/10/2019: https://pt.gearbest.com/car-dvd-player/pp_1084547.html?wid=1433363&currency=EUR&vip=14577034&gclid=Cj0KCQjwoebsBRCHARIsAC3JP0LDylEhOcPkuHmaoFBDafUTAtD00kn8RMf7mRPMUFY6ozhTdxOzB2AaAhe4EALw_wcB 
+[1] Gearbest. RM - CT0012 Player Android 6.0 Bluetooth GPS Stereo para Carro - Preto	2. Acedido em 06/10/2019: https://pt.gearbest.com/car-dvd-player/pp_1084547.html?wid=1433363&currency=EUR&vip=14577034&gclid=Cj0KCQjwoebsBRCHARIsAC3JP0LDylEhOcPkuHmaoFBDafUTAtD00kn8RMf7mRPMUFY6ozhTdxOzB2AaAhe4EALw_wcB
+
+## Modelo ER
+![Modelo ER](C:\Users\ricardo.joaquim\Documents\Universidade\CarRadio_MYSQL\ModeloER)
 
