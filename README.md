@@ -12,7 +12,7 @@ Um exemplo de um produto que já exista no mercado: https://pt.gearbest.com/car-
 * Música: Possibilidade de criar / editar / eliminar playlist's por utilizador (não será possível ouvir as músicas, apenas visual). É possível visualizar as músicas por género musical. O utilizador poderá adicionar músicas às playlists.
 * Rádio: Este menú irá abrir uma imagem estática de um rádio.
 * GPS: Este menú irá abrir uma imagem de um mapa para simular um GPS.
-**Funcionalidades extras**
+* **Funcionalidades extras**
 * Contactos: Será possível criar, editar, eliminar contactos existentes. Pode-se fazer chamadas a partir dos contactos (esta funcionalidade será apenas visual, ou seja, ao carregar no icon de ligar a algum contacto, irá apenas abrir a funcionalidade de 'Telefone' e não irá fazer a ligação telefónica).
 * Telefone: Menú onde será possível digitar os números para contactar alguém. Histórico de registo de chamadas. Possibilidade de gravar um novo contacto.
 
