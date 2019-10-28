@@ -14,7 +14,7 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader(
 					Main.class.getResource("views/viewUtilizador.fxml"));
-			loader.setController(new UtilizadorController());;
+			loader.setController(new UtilizadorController());
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

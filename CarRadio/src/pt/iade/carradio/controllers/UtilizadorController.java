@@ -8,53 +8,20 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class UtilizadorController {
-	  @FXML
-	    private ImageView imgUtilizador1;
+    @FXML
+    void onUser1(MouseEvent event) {
+    	System.out.println("Clicked");
+    }
 
-	    @FXML
-	    private ImageView imgUtilizador2;
+    @FXML
+    void onUser2(MouseEvent event) {
 
-	    @FXML
-	    private ImageView imgUtilizador3;
+    }
 
-	    @FXML
-	    private ImageView imgUtilizador4;
+    @FXML
+    void onUser3(MouseEvent event) {
 
-	    @FXML
-	    private ImageView imgUtilizador5;
-
-	    @FXML
-	    private ImageView imgUtilizador6;
-
-	    @FXML
-	    void Utilizador1(MouseEvent event) {
-
-	    }
-
-	    @FXML
-	    void Utilizador2(MouseEvent event) {
-
-	    }
-
-	    @FXML
-	    void Utilizador3(MouseEvent event) {
-
-	    }
-
-	    @FXML
-	    void Utilizador4(MouseEvent event) {
-
-	    }
-
-	    @FXML
-	    void Utilizador5(MouseEvent event) {
-
-	    }
-
-	    @FXML
-	    void Utilizador6(MouseEvent event) {
-
-	    }
+    }
 
 	}
 
