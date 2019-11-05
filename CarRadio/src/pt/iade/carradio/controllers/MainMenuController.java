@@ -2,8 +2,9 @@ package pt.iade.carradio.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import pt.iade.carradio.WindowManager;
 
-public class MenuPrincipalController {
+public class MainMenuController {
 	
     @FXML
     void onGPS(MouseEvent event) {
@@ -23,6 +24,10 @@ public class MenuPrincipalController {
     @FXML
     void onPhone(MouseEvent event) {
 
+    }
+    @FXML
+    void onUser(MouseEvent event) {
+    	WindowManager.openUserWindow();
     }
 	
 }

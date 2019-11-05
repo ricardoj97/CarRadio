@@ -6,11 +6,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import pt.iade.carradio.WindowManager;
 
-public class UtilizadorController {
+public class UserController {
     @FXML
     void onUser1(MouseEvent event) {
-    	System.out.println("Clicked");
+    	WindowManager.openMainMenuWindow();
     }
 
     @FXML
