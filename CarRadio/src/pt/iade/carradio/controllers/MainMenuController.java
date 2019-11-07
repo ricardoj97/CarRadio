@@ -8,7 +8,7 @@ public class MainMenuController {
 	
     @FXML
     void onGPS(MouseEvent event) {
-    	System.out.println("GPS");
+    	WindowManager.openGPSWindow();
     }
 
     @FXML
@@ -18,12 +18,13 @@ public class MainMenuController {
 
     @FXML
     void onRadio(MouseEvent event) {
+    	WindowManager.openRadioWindow();
 
     }
 
     @FXML
     void onPhone(MouseEvent event) {
-
+    	WindowManager.openPhoneWindow();
     }
     @FXML
     void onUser(MouseEvent event) {

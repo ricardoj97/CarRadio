@@ -27,9 +27,31 @@ public class WindowManager {
 		primaryStage.show();
 	}
 	
+	//Abrir menu principal
 	public static void openMainMenuWindow() {
 		openWindow("views/viewMainMenu.fxml",
 				primaryStage,new MainMenuController());
+		primaryStage.show();
+	}
+	
+	//Abrir GPS
+	public static void openGPSWindow() {
+		openWindow("views/viewGPS.fxml",
+				primaryStage,new MainController());
+		primaryStage.show();
+	}
+	
+	//Abrir Radio
+	public static void openRadioWindow() {
+		openWindow("views/viewRadio.fxml",
+				primaryStage,new MainController());
+		primaryStage.show();
+	}
+	
+	//Abrir Telefone
+	public static void openPhoneWindow() {
+		openWindow("views/viewPhone.fxml",
+				primaryStage,new MainController());
 		primaryStage.show();
 	}
 	/*
