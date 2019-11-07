@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pt.iade.carradio.controllers.MainController;
-import pt.iade.carradio.controllers.MainMenuController;
 import pt.iade.carradio.controllers.MusicController;
 import pt.iade.carradio.controllers.UserController;
 
@@ -30,7 +29,7 @@ public class WindowManager {
 	//Abrir menu principal
 	public static void openMainMenuWindow() {
 		openWindow("views/viewMainMenu.fxml",
-				primaryStage,new MainMenuController());
+				primaryStage,new MainController());
 		primaryStage.show();
 	}
 	
@@ -55,24 +54,6 @@ public class WindowManager {
 		primaryStage.show();
 	}
 	/*
-	public static void backToUserWindow() {
-		openSceneInWindow("views/viewUtilizador.fxml",
-				primaryStage,new MainController());
-	}
-	
-	
-	
-	public static void backToMenuWindow() {
-		openSceneInWindow("views/viewMenuPrincipal.fxml",
-				primaryStage,new MainController());
-	}
-	public static void openMusicWindow() {
-		openWindow("views/mainView.fxml",
-				primaryStage,new MusicController());
-		primaryStage.show();
-	}
-	
-
 	public static void openSceneInWindow(String viewPath, Stage window,
 			Object controller) {
 		try {
@@ -83,6 +64,7 @@ public class WindowManager {
 		}
 	}*/
 	
+	//Método genérico de abrir uma nova janela
 	public static void openWindow(String viewPath, Stage window, 
 			Object controller) {
 		try {
