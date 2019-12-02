@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="572.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="26.0" onMouseClicked="#onHomeButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconHome.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="340.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label prefHeight="17.0" prefWidth="110.0" text="25 Dezembro" textFill="#f4f4f4">
+               <HBox.margin>
+                  <Insets bottom="2.0" right="4.0" top="2.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="20.0" prefWidth="50.0" text="10:30" textFill="#f4f4f4">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconUser1.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <VBox prefHeight="385.0" prefWidth="278.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="playlistName" alignment="CENTER" prefHeight="36.0" prefWidth="280.0" text="Playlist" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TableView fx:id="musicTable" editable="true" prefHeight="348.0" prefWidth="272.0" style="-fx-background-color: BLACK;">
+              <columns>
+                <TableColumn fx:id="musicData" prefWidth="207.0" text="Música" />
+                <TableColumn fx:id="durationData" prefWidth="70.0" text="Duração" />
+              </columns>
+               <VBox.margin>
+                  <Insets top="1.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox prefHeight="385.0" prefWidth="294.0" style="-fx-background-color: LIGHTGRAY;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="musicImage" fitHeight="191.0" fitWidth="202.0" pickOnBounds="true" smooth="false">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../../../../../CarRadio_MYSQL/Imagens/iconUser2.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="musicName" alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Nome da música">
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="artistaName" alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Artista">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="40.0" right="40.0" />
+               </VBox.margin>
+            </Label>
+            <HBox fx:id="player" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: White;">
+               <children>
+                  <ImageView fitHeight="37.0" fitWidth="29.0" onMouseClicked="#shuffle" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../images/shuffle.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="39.0" fitWidth="48.0" onMouseClicked="#previousMusic" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/previous.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="50.0" fitWidth="68.0" onMouseClicked="#playButton" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/play.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="15.0" top="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="42.0" onMouseClicked="#nextMusic" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="15.0" top="15.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../images/next.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="40.0" fitWidth="33.0" onMouseClicked="#volume" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../images/volume.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="18.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

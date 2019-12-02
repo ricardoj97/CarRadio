@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane prefHeight="381.0" prefWidth="572.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField prefHeight="25.0" prefWidth="572.0" text="   Encontre a sua música..." />
+            <Label layoutX="233.0" layoutY="32.0" prefHeight="30.0" prefWidth="79.0" text="Playlists" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <GridPane gridLinesVisible="true" layoutX="71.0" layoutY="74.0" prefHeight="269.0" prefWidth="417.0" style="-fx-background-color: #0000;" visible="false" AnchorPane.leftAnchor="71.0" fx:id="xd">
+              <columnConstraints>
+                <ColumnConstraints fx:id="col1" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints fx:id="row0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints fx:id="row1" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints fx:id="row2" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <ImageView id="albumimg" fx:id="albumimg" fitHeight="77.0" fitWidth="85.0" layoutX="61.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="albumname" layoutX="154.0" layoutY="90.0" prefHeight="17.0" prefWidth="96.0" />
+            <GridPane layoutX="46.0" layoutY="74.0" prefHeight="255.0" prefWidth="462.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fitHeight="75.0" fitWidth="71.0" onMouseClicked="#onPlayer" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../../../../../../../../Ambiente%20de%20Trabalho/img%20ref/1200x1200bb.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="69.0" fitWidth="75.0" onMouseClicked="#onPlayer" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/iconUser3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="72.0" fitWidth="133.0" onMouseClicked="#onPlayer" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../../../../../../../../../Ambiente%20de%20Trabalho/img%20ref/green-day-uno_510x510.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="66.0" fitWidth="69.0" onMouseClicked="#onPlayer" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../../../../../../../../../Ambiente%20de%20Trabalho/img%20ref/Metallica-Master-of-Puppets-album-covers-billboard-1000x1000.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" onMouseClicked="#onPlayer" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../../../../../../../../../Ambiente%20de%20Trabalho/img%20ref/modal-soul-559a82e7b919c.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="71.0" fitWidth="73.0" onMouseClicked="#onPlayer" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../../../../../../../../../Ambiente%20de%20Trabalho/img%20ref/transferir.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="572.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="28.0" onMouseClicked="#onHomeButton" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconHome.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="460.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label prefHeight="17.0" prefWidth="110.0" text="25 Dezembro" textFill="#f4f4f4">
+               <HBox.margin>
+                  <Insets bottom="2.0" right="4.0" top="2.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label prefHeight="20.0" prefWidth="50.0" text="10:30" textFill="#f4f4f4">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="27.0" fitWidth="45.0" onMouseClicked="#onUser" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/iconUser1.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="381.0" prefWidth="122.0" style="-fx-background-color: silver;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #938579;" text="            Géneros" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Hip-Hop" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Rock" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Eletrónica" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Funk" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Pop" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Punk" />
+            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="R&amp;B" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

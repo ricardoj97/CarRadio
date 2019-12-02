@@ -9,6 +9,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pt.iade.carradio.controllers.MainController;
 import pt.iade.carradio.controllers.MusicController;
+import pt.iade.carradio.controllers.PlaylistController;
 import pt.iade.carradio.controllers.UserController;
 
 public class WindowManager {
@@ -51,6 +52,20 @@ public class WindowManager {
 	public static void openPhoneWindow() {
 		openWindow("views/viewPhone.fxml",
 				primaryStage,new MainController());
+		primaryStage.show();
+	}
+	
+	//Abrir Playlists
+	public static void openPlaylistWindow() {
+		openWindow("views/viewPlaylist.fxml",
+				primaryStage,new MainController());
+		primaryStage.show();
+	}
+	
+	//Abrir Player
+	public static void openPlayerWindow() {
+		openWindow("views/viewPlayer.fxml",
+				primaryStage,new MusicController());
 		primaryStage.show();
 	}
 	/*

@@ -14,7 +14,7 @@ public class MainController {
   //Abrir Página Playlists
     @FXML
     void onMusic(MouseEvent event) {
-
+    	WindowManager.openPlaylistWindow();
     }
 
   //Abrir Radio
@@ -30,6 +30,14 @@ public class MainController {
     	WindowManager.openPhoneWindow();
     }
     
+    //Abrir o Player
+    @FXML
+    void onPlayer(MouseEvent event) {
+        	WindowManager.openPlayerWindow();
+        }
+
+    
+    
     //Voltar ao ecrã para escolher o utilizador
     @FXML
     void onUser(MouseEvent event) {
@@ -41,4 +49,7 @@ public class MainController {
     void onHomeButton(MouseEvent event) {
     	WindowManager.openMainMenuWindow();
     }
+    
+
+
 }

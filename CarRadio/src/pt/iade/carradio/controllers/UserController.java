@@ -1,12 +1,9 @@
 package pt.iade.carradio.controllers;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import pt.iade.carradio.WindowManager;
+import pt.iade.carradio.models.daos.MusicDAO;
 
 public class UserController {
     @FXML
@@ -16,7 +13,7 @@ public class UserController {
 
     @FXML
     void onUser2(MouseEvent event) {
-
+    	MusicDAO.getMusics();
     }
 
     @FXML
