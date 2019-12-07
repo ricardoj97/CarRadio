@@ -5,39 +5,44 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.cell.PropertyValueFactory;
 import pt.iade.carradio.models.Music;
+import pt.iade.carradio.controllers.MusicController;
 
 public final class MusicDAO {
 	private MusicDAO() {}
 	
-	
-	public static List<Music> getMusics()  {
-		List<Music> songs = new ArrayList<>();
+	public static ObservableList<Music> getSongs()  {
+		ObservableList<Music> songs = FXCollections.observableArrayList();
 		Connection conn = DBConnector.getConnection();
 		
 		try (	Statement stat = conn.createStatement();
 				ResultSet rs = stat.executeQuery(
-						"Select g.Genero as 'GeneroMSkdjhs', NomeMusica, Imagem, Artista, Duracao from musicas join genero g on g.generoID=musicas.genero;")){
-			while (rs.next()) {
-				
-				String  nomeMusica=rs.getString("nomeMusica");
-				String  nomeGenero=rs.getString("GeneroMSkdjhs");
-				String  imagem=rs.getString("imagem");
-				int  artista=rs.getInt("artista");
-				Time duracao = (rs.getTime("duracao"));
+						"Select NomeMusica, Duracao from Musicas;")){
 			
-
-				songs.add(new Music(nomeMusica, imagem, artista, duracao));
-				System.out.println(nomeGenero + " - " +nomeMusica +" - "+ duracao);
+			while (rs.next()) {
+				String  nomeMusica=rs.getString("NomeMusica");
+				LocalTime duracao = LocalTime.parse(rs.getString("Duracao"), DateTimeFormatter.ofPattern("HH:mm:ss"));
+				songs.add(new Music(nomeMusica, duracao));
 			}	
-		} catch (SQLException e) {
-			e.printStackTrace();
 		} 
-		System.out.println(Arrays.toString(songs.toArray()));
-		return songs;
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	return songs;
+
 	}
 }

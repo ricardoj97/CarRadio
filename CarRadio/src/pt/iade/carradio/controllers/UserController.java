@@ -13,7 +13,6 @@ public class UserController {
 
     @FXML
     void onUser2(MouseEvent event) {
-    	MusicDAO.getMusics();
     }
 
     @FXML

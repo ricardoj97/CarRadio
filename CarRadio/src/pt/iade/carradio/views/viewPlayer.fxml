@@ -54,7 +54,7 @@
       </HBox>
    </top>
    <right>
-      <VBox prefHeight="385.0" prefWidth="278.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="410.0" prefWidth="316.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="playlistName" alignment="CENTER" prefHeight="36.0" prefWidth="280.0" text="Playlist" textFill="WHITE">
                <font>
@@ -63,8 +63,8 @@
             </Label>
             <TableView fx:id="musicTable" editable="true" prefHeight="348.0" prefWidth="272.0" style="-fx-background-color: BLACK;">
               <columns>
-                <TableColumn fx:id="musicData" prefWidth="207.0" text="Música" />
-                <TableColumn fx:id="durationData" prefWidth="70.0" text="Duração" />
+                <TableColumn fx:id="columnMusic" prefWidth="207.0" text="Música" />
+                <TableColumn fx:id="columnDuration" prefWidth="70.0" text="Duração" />
               </columns>
                <VBox.margin>
                   <Insets top="1.0" />
@@ -74,7 +74,7 @@
       </VBox>
    </right>
    <left>
-      <VBox prefHeight="385.0" prefWidth="294.0" style="-fx-background-color: LIGHTGRAY;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="410.0" prefWidth="394.0" style="-fx-background-color: LIGHTGRAY;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="musicImage" fitHeight="191.0" fitWidth="202.0" pickOnBounds="true" smooth="false">
                <VBox.margin>

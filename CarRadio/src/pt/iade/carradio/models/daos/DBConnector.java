@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnector {
-	private static final String URL = "jdbc:mysql://localhost/carradio";
-	private static final String PASS = "Ric14rod8_";
-	private static final String USER = "root";
+	private static final String URL = "jdbc:mysql://remotemysql.com:3306/rPHgdBiJQH?useSSL=false";
+	private static final String PASS = "nR8UPayepw";
+	private static final String USER = "rPHgdBiJQH";
 	
 	private static Connection connection = null;
 	

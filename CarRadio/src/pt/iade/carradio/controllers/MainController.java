@@ -1,8 +1,13 @@
 package pt.iade.carradio.controllers;
 
+import java.sql.Time;
+
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.fxml.FXML;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import pt.iade.carradio.WindowManager;
+import pt.iade.carradio.models.Music;
 
 public class MainController {
 	//Abrir GPS
@@ -34,6 +39,7 @@ public class MainController {
     @FXML
     void onPlayer(MouseEvent event) {
         	WindowManager.openPlayerWindow();
+
         }
 
     
