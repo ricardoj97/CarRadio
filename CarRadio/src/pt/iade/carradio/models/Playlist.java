@@ -4,19 +4,21 @@ import javafx.collections.ObservableList;
 
 public class Playlist {
 
-	private String name;
+	private String nomePlaylist;
 	private ObservableList <Music> songs;
 	
-	public Playlist(String name, ObservableList<Music> songs) {
-		super();
-		this.name = name;
+	public Playlist(String nomePLaylist, ObservableList<Music> songs) {
+		this.nomePlaylist = nomePLaylist;
 		this.songs = songs;
+	}
+	public Playlist(String nomePLaylist) {
+		this.nomePlaylist = nomePLaylist;
 	}
 
 	public String getName() {
-		return name;
+		return nomePlaylist;
 	}
-
+	
 	public ObservableList<Music> getSongs() {
 		return songs;
 	}

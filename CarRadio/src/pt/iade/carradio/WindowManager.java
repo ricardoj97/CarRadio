@@ -11,10 +11,13 @@ import pt.iade.carradio.controllers.MainController;
 import pt.iade.carradio.controllers.MusicController;
 import pt.iade.carradio.controllers.PlaylistController;
 import pt.iade.carradio.controllers.UserController;
+import pt.iade.carradio.models.Music;
+import pt.iade.carradio.models.Playlist;
 
 public class WindowManager {
 
 	private static Stage primaryStage;
+	private static Music Music;
 
 	public static void setPrimaryStage(Stage primaryStage) {
 		WindowManager.primaryStage = primaryStage;
@@ -56,6 +59,7 @@ public class WindowManager {
 	}
 	
 	//Abrir Playlists
+	
 	public static void openPlaylistWindow() {
 		openWindow("views/viewPlaylist.fxml",
 				primaryStage,new MainController());
@@ -100,6 +104,8 @@ public class WindowManager {
 		Parent root = loader.load();
 		return root;
 	}
+
+
 	
 	
 }

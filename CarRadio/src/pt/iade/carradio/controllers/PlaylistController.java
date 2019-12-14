@@ -8,8 +8,12 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import pt.iade.carradio.WindowManager;
+import pt.iade.carradio.models.Playlist;
 
 public class PlaylistController {
+	private Playlist playlist;
+	
+
 
     @FXML
     private GridPane xd;
@@ -30,7 +34,31 @@ public class PlaylistController {
     private ImageView albumimg;
 
     @FXML
-    private Label albumname;
+    private Label playlistName;
 
+    @FXML
+    void onHomeButton(MouseEvent event) {
 
+    }
+
+    @FXML
+    void onPlayer(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onUser(MouseEvent event) {
+
+    }
+    
+   
+    
+//	public PlaylistController() {
+//		this.playlist = playlist;
+//	}
+//    
+//	@FXML
+//    private void initialize() {
+//		playlistName.setText(playlist.getName());
+//    }
 }

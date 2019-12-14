@@ -31,18 +31,65 @@ public final class MusicDAO {
 		
 		try (	Statement stat = conn.createStatement();
 				ResultSet rs = stat.executeQuery(
-						"Select NomeMusica, Duracao from Musicas;")){
+						"Select m.NomeMusica, a.NomeArtista, m.Duracao, m.Imagem from Musicas m join Artistas a on a.ArtistaID=m.ArtistaID;")){
 			
 			while (rs.next()) {
 				String  nomeMusica=rs.getString("NomeMusica");
+				String  nomeArtista=rs.getString("NomeArtista");
+				String  imagem=rs.getString("Imagem");
 				LocalTime duracao = LocalTime.parse(rs.getString("Duracao"), DateTimeFormatter.ofPattern("HH:mm:ss"));
-				songs.add(new Music(nomeMusica, duracao));
+				songs.add(new Music(nomeMusica, nomeArtista,duracao, imagem));
 			}	
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
 	return songs;
+	}
+	
+	public static String getNomePlaylist()  {
+		String nomePlaylist = null;
+		Connection conn = DBConnector.getConnection();
+		
+		try (	Statement stat = conn.createStatement();
+				ResultSet rs = stat.executeQuery(
+						"Select NomePlaylist from Playlists where PlaylistID=2;")){
+			
+			while (rs.next()) {
+				
+				nomePlaylist=rs.getString("NomePlaylist");
+				
+				
+			}	
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	return nomePlaylist;
 
 	}
+	
+	public static String getImagem()  {
+		String imagem = null;
+		Connection conn = DBConnector.getConnection();
+		
+		try (	Statement stat = conn.createStatement();
+				ResultSet rs = stat.executeQuery(
+						"Select Imagem from Musicas")){
+			
+			while (rs.next()) {
+				
+				imagem=rs.getString("Imagem");
+				
+				
+			}	
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	return imagem;
+
+	}
+
+
 }

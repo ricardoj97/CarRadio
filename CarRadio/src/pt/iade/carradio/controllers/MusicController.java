@@ -1,6 +1,7 @@
 package pt.iade.carradio.controllers;
 
 import java.sql.Time;
+import java.time.LocalTime;
 
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -22,7 +24,7 @@ import pt.iade.carradio.models.daos.MusicDAO;
 public class MusicController {
 
     @FXML
-    private Label playlistName;
+    private Label playlistName, musicName, artistaName;
 
     @FXML
     private TableView<Music> musicTable;
@@ -37,53 +39,61 @@ public class MusicController {
     private ImageView musicImage;
 
     @FXML
-    private Label musicName;
-
-    @FXML
-    private Label artistaName;
-
-    @FXML
     private HBox player;
-
-    
-	private ObservableList<Music> songs = MusicDAO.getSongs();
-    
-	@FXML
-    private void initialize() {
-    	columnMusic.setCellValueFactory(data -> new ReadOnlyStringWrapper(data.getValue().getNomeMusica()));
-    	columnDuration.setCellValueFactory(new PropertyValueFactory<Music, Time>("duracao"));
-    	musicTable.setItems(songs);
-			   
-    }
-    
     
     @FXML
     void nextMusic(MouseEvent event) {
-
     }
 
     @FXML
     void playButton(MouseEvent event) {
-
     }
 
     @FXML
     void previousMusic(MouseEvent event) {
-
     }
 
     @FXML
     void shuffle(MouseEvent event) {
-
     }
 
     @FXML
     void volume(MouseEvent event) {
-
     }
     @FXML
     void onHomeButton(MouseEvent event) {
-
+    	//WindowManager.openPlaylistWindow();
     }
+
+	private ObservableList<Music> songs = MusicDAO.getSongs();
+    private String nomePlaylist = MusicDAO.getNomePlaylist();
+	
+	@FXML
+    private void initialize() {
+		playlistName.setText(nomePlaylist);
+    	columnMusic.setCellValueFactory(data -> new ReadOnlyStringWrapper(data.getValue().getNomeMusica()));
+    	columnDuration.setCellValueFactory(new PropertyValueFactory<Music, Time>("Duracao"));
+    	musicTable.setItems(songs);
+    	
+    	musicTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+    	    if (newSelection != null) {
+    	    	
+    	        musicName.setText(newSelection.getNomeMusica());
+    	        artistaName.setText(newSelection.getNomeArtista());
+    	        Image image = new Image(getClass().getResource(newSelection.getImagem()).toExternalForm());
+    	   //     System.out.println(image);
+    	        musicImage.setImage(image);
+    	    }
+    	});
+	}
+    	       
+
+
+//    	musicName.setText(nomeMusica);
+//    	artistaName.setText(nomeArtista);
+  
+    
+    
+
 }
 

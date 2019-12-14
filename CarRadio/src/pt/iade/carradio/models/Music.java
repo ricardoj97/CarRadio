@@ -1,35 +1,48 @@
 package pt.iade.carradio.models;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.time.LocalTime;
-import java.time.temporal.TemporalAccessor;
-import java.util.Date;
 
 public class Music {
 	protected String nomeMusica;
+	protected String nomeArtista;
 	protected LocalTime duracao;
+	protected String imagem;
 	
-	public Music(String nomeMusica, LocalTime duracao) {
+	public Music(String nomeMusica, String nomeArtista, LocalTime duracao, String imagem) {
 
 		this.nomeMusica = nomeMusica;
+		this.nomeArtista = nomeArtista;
 		this.duracao = duracao;
+		this.imagem = imagem;
+		
 	}
 	
-	public String getNomeMusica() {
-		return nomeMusica;
+	public Music(String nomeMusica, String nomeArtista) {
+
+		this.nomeMusica = nomeMusica;
+		this.nomeArtista = nomeArtista;
 	}
+	
+	
+	public String getNomeMusica() {
+		return nomeMusica.toString();
+	}
+
 	public LocalTime getDuracao() {
 		return duracao;
 	}
 
-	public void setNomeMusica(String nomeMusica) {
-		this.nomeMusica = nomeMusica;
+	public String getNomeArtista() {
+		return nomeArtista.toString();
 	}
 
-	public void setDuracao(LocalTime duracao) {
-		this.duracao = duracao;
+	public String getImagem() {
+		return imagem;
 	}
+	
+	
+	
+
 	
 
 /*
