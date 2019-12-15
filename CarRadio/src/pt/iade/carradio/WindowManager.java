@@ -62,7 +62,7 @@ public class WindowManager {
 	
 	public static void openPlaylistWindow() {
 		openWindow("views/viewPlaylist.fxml",
-				primaryStage,new MainController());
+				primaryStage,new PlaylistController());
 		primaryStage.show();
 	}
 	

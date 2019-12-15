@@ -16,13 +16,7 @@ public class Music {
 		this.imagem = imagem;
 		
 	}
-	
-	public Music(String nomeMusica, String nomeArtista) {
 
-		this.nomeMusica = nomeMusica;
-		this.nomeArtista = nomeArtista;
-	}
-	
 	
 	public String getNomeMusica() {
 		return nomeMusica.toString();
@@ -30,6 +24,10 @@ public class Music {
 
 	public LocalTime getDuracao() {
 		return duracao;
+	}
+
+	public String toStringDuracao() {
+		return duracao.toString();
 	}
 
 	public String getNomeArtista() {
@@ -40,18 +38,7 @@ public class Music {
 		return imagem;
 	}
 	
-	
-	
 
-	
-
-/*
-	@Override
-	public String toString() {
-		return "Music [playlist=" + ", nomeMusica=" + nomeMusica + ", imagem=" + imagem + ", artista="
-				+ artista + ", duracao="+"]";
-	}
-	*/
 	
 
 }

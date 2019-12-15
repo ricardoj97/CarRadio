@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -20,7 +21,7 @@
                   <Image url="@../images/iconHome.png" />
                </image>
                <HBox.margin>
-                  <Insets right="340.0" />
+                  <Insets right="470.0" />
                </HBox.margin>
             </ImageView>
             <Label prefHeight="17.0" prefWidth="110.0" text="25 Dezembro" textFill="#f4f4f4">
@@ -84,7 +85,7 @@
                   <Image url="@../../../../../../../CarRadio_MYSQL/Imagens/iconUser2.png" />
                </image>
             </ImageView>
-            <Label fx:id="musicName" alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Nome da música">
+            <Label fx:id="musicName" alignment="CENTER" prefHeight="17.0" prefWidth="296.0">
                <VBox.margin>
                   <Insets left="40.0" right="40.0" />
                </VBox.margin>
@@ -92,7 +93,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="artistaName" alignment="CENTER" prefHeight="17.0" prefWidth="296.0" text="Artista">
+            <Label fx:id="artistaName" alignment="CENTER" prefHeight="17.0" prefWidth="296.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -100,6 +101,25 @@
                   <Insets bottom="20.0" left="40.0" right="40.0" />
                </VBox.margin>
             </Label>
+            <HBox prefHeight="19.0" prefWidth="394.0">
+               <children>
+                  <Label fx:id="musicTime" prefHeight="17.0" prefWidth="52.0" text="00:00:00">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="durationTime">
+                     <HBox.margin>
+                        <Insets left="270.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Slider fx:id="musicSlider">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Slider>
             <HBox fx:id="player" prefHeight="47.0" prefWidth="294.0" style="-fx-background-color: White;">
                <children>
                   <ImageView fitHeight="37.0" fitWidth="29.0" onMouseClicked="#shuffle" pickOnBounds="true" preserveRatio="true">
@@ -118,17 +138,14 @@
                         <Insets right="15.0" top="15.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="50.0" fitWidth="68.0" onMouseClicked="#playButton" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playButton" fitHeight="50.0" fitWidth="68.0" onMouseClicked="#playButton" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/play.png" />
                      </image>
-                     <HBox.margin>
-                        <Insets bottom="10.0" right="15.0" top="10.0" />
-                     </HBox.margin>
                   </ImageView>
                   <ImageView fitHeight="40.0" fitWidth="42.0" onMouseClicked="#nextMusic" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
-                        <Insets right="15.0" top="15.0" />
+                        <Insets left="10.0" right="15.0" top="15.0" />
                      </HBox.margin>
                      <image>
                         <Image url="@../images/next.png" />
@@ -142,6 +159,7 @@
                         <Image url="@../images/volume.png" />
                      </image>
                   </ImageView>
+                  <Slider orientation="VERTICAL" />
                </children>
                <VBox.margin>
                   <Insets top="18.0" />

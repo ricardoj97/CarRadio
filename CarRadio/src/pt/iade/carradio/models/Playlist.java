@@ -4,18 +4,21 @@ import javafx.collections.ObservableList;
 
 public class Playlist {
 
-	private String nomePlaylist;
+	private static String nomePlaylist;
 	private ObservableList <Music> songs;
+	private static int playlistID;
 	
-	public Playlist(String nomePLaylist, ObservableList<Music> songs) {
-		this.nomePlaylist = nomePLaylist;
+	public Playlist(String nomePLaylist, ObservableList<Music> songs, int playlistID) {
+		Playlist.nomePlaylist = nomePLaylist;
 		this.songs = songs;
+		//this.playlistID= playlistID;
+		
 	}
 	public Playlist(String nomePLaylist) {
-		this.nomePlaylist = nomePLaylist;
+		Playlist.nomePlaylist = nomePLaylist;
 	}
 
-	public String getName() {
+	public static String getNomePlaylist() {
 		return nomePlaylist;
 	}
 	
@@ -23,7 +26,16 @@ public class Playlist {
 		return songs;
 	}
 
-
+	public static int getPlaylistID() {
+		return playlistID;
+	}
+	
+	public int setPlaylistID(int playlistID) {
+		return playlistID;
+	}
 	
 	
 }
+
+
+

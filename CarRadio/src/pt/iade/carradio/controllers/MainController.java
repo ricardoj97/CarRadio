@@ -35,12 +35,6 @@ public class MainController {
     	WindowManager.openPhoneWindow();
     }
     
-    //Abrir o Player
-    @FXML
-    void onPlayer(MouseEvent event) {
-        	WindowManager.openPlayerWindow();
-
-        }
 
     
     
