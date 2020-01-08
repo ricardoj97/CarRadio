@@ -25,14 +25,24 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <ImageView id="albumimg" fx:id="albumimg" fitHeight="77.0" fitWidth="85.0" layoutX="61.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true" />
             <ScrollPane layoutY="25.0" prefHeight="356.0" prefWidth="572.0" style="-fx-background-color: black;">
-               <content>
-                  <TableView fx:id="playlistTV" prefHeight="356.0" prefWidth="570.0">
-                    <columns>
-                      <TableColumn fx:id="playlistTC" prefWidth="569.0" text="Playlist" />
-                    </columns>
-                  </TableView>
-               </content>
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="353.0" prefWidth="571.0" style="-fx-background-color: gray;">
+                     <children>
+                        <TableView fx:id="musicTableByGenre" prefHeight="340.0" prefWidth="556.0">
+                          <columns>
+                            <TableColumn fx:id="columnMusic" prefWidth="262.0" text="Música" />
+                            <TableColumn fx:id="columnArtist" maxWidth="4000.0" minWidth="6.0" prefWidth="165.0" text="Artista" />
+                              <TableColumn fx:id="columnDuration" maxWidth="2000.0" prefWidth="100.0" text="Duração" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
             </ScrollPane>
          </children>
       </AnchorPane>
@@ -83,12 +93,12 @@
          <children>
             <Label prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #938579;" text="            Géneros" />
             <Button mnemonicParsing="false" onMouseClicked="#BtnHipHop" prefHeight="47.0" prefWidth="122.0" text="Hip-Hop" />
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Rock" />
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Eletrónica" />
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Funk" />
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Pop" />
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="Punk" />
-            <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" text="R&amp;B" />
+            <Button mnemonicParsing="false" onMouseClicked="#BtnRock" prefHeight="47.0" prefWidth="122.0" text="Rock" />
+            <Button mnemonicParsing="false" onMouseClicked="#BtnEletronica" prefHeight="47.0" prefWidth="122.0" text="Eletrónica" />
+            <Button mnemonicParsing="false" onMouseClicked="#BtnFunk" prefHeight="47.0" prefWidth="122.0" text="Funk" />
+            <Button mnemonicParsing="false" onMouseClicked="#BtnPop" prefHeight="47.0" prefWidth="122.0" text="Pop" />
+            <Button mnemonicParsing="false" onMouseClicked="#BtnPunk" prefHeight="47.0" prefWidth="122.0" text="Punk" />
+            <Button mnemonicParsing="false" onMouseClicked="#BtnRB" prefHeight="47.0" prefWidth="122.0" text="R&amp;B" />
          </children>
       </VBox>
    </left>

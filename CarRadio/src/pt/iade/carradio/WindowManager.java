@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import pt.iade.carradio.controllers.GenreController;
 import pt.iade.carradio.controllers.MainController;
 import pt.iade.carradio.controllers.MusicController;
 import pt.iade.carradio.controllers.PlaylistController;
@@ -70,6 +71,13 @@ public class WindowManager {
 	public static void openPlayerWindow() {
 		openWindow("views/viewPlayer.fxml",
 				primaryStage,new MusicController());
+		primaryStage.show();
+	}
+	
+	//Abrir generos
+	public static void openSongsWindow() {
+		openWindow("views/viewSongs.fxml",
+				primaryStage,new GenreController());
 		primaryStage.show();
 	}
 	/*

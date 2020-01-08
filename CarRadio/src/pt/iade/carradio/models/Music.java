@@ -16,6 +16,13 @@ public class Music {
 		this.imagem = imagem;
 		
 	}
+	public Music(String nomeMusica, String nomeArtista, LocalTime duracao) {
+
+		this.nomeMusica = nomeMusica;
+		this.nomeArtista = nomeArtista;
+		this.duracao = duracao;
+		
+	}
 
 	
 	public String getNomeMusica() {

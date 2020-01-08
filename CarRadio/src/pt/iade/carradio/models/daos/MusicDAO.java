@@ -22,6 +22,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 import pt.iade.carradio.models.Music;
 import pt.iade.carradio.models.Playlist;
+import pt.iade.carradio.controllers.GenreController;
 import pt.iade.carradio.controllers.MusicController;
 
 public final class MusicDAO {
@@ -75,7 +76,7 @@ public final class MusicDAO {
 		String nomeMusica1 = "";
 		
 		Connection conn = DBConnector.getConnection();
-		String sql = "select m.NomeMusica from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID where mp.PlaylistID=? LIMIT 1;";
+		String sql = "select m.NomeMusica from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID where mp.PlaylistID=?;";
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setInt(1, playlistID);
 			try (ResultSet rs = stat.executeQuery()) {
@@ -91,12 +92,13 @@ public final class MusicDAO {
 		return nomeMusica1;
 	}
 	
+	
 public static String getImagem1(int playlistID) {
 		
 		String imagem1 = "";
 		
 		Connection conn = DBConnector.getConnection();
-		String sql = "select m.Imagem from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID where mp.PlaylistID=? LIMIT 1;";
+		String sql = "select m.Imagem from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID where mp.PlaylistID=?;";
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setInt(1, playlistID);
 			try (ResultSet rs = stat.executeQuery()) {
@@ -151,7 +153,29 @@ public static String getNomeArtista1(int playlistID) {
 	}
 	return nomeArtista1;
 }
+
 	
+public static ObservableList<Music> getSongsByGenre(int genreClicked) {
+	ObservableList<Music> songsG=FXCollections.observableArrayList();
+	Connection con = DBConnector.getConnection();
+	String sql = "select m.NomeMusica, a.NomeArtista, m.Duracao from Musicas m join Artistas a on a.ArtistaID=m.ArtistaID where GeneroID=?;";
+	try (PreparedStatement stat = con.prepareStatement(sql)) {
+		stat.setInt(1, GenreController.getGenreClicked());
+		try (ResultSet rs = stat.executeQuery()) {
+			while (rs.next()) {
+				String nomeMusica = rs.getString("NomeMusica");
+				String nomeArtista = rs.getString("NomeArtista");
+				LocalTime duracao = LocalTime.parse(rs.getString("Duracao"), DateTimeFormatter.ofPattern("HH:mm:ss"));
+				songsG.add(new Music(nomeMusica, nomeArtista, duracao));
+				System.out.println(nomeMusica);
+			}
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return songsG;
+}
+
 }
 
 

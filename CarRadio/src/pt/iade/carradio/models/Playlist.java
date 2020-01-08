@@ -8,18 +8,18 @@ public class Playlist {
 	private ObservableList <Music> songs;
 	private static int playlistID;
 	
-	public Playlist(String nomePLaylist, ObservableList<Music> songs, int playlistID) {
-		Playlist.nomePlaylist = nomePLaylist;
+	public Playlist(String nomePlaylist, ObservableList<Music> songs, int playlistID) {
+		Playlist.nomePlaylist = nomePlaylist;
 		this.songs = songs;
 		//this.playlistID= playlistID;
 		
 	}
-	public Playlist(String nomePLaylist) {
-		Playlist.nomePlaylist = nomePLaylist;
+	public Playlist(String nomePlaylist) {
+		Playlist.nomePlaylist = nomePlaylist;
 	}
 
-	public static String getNomePlaylist() {
-		return nomePlaylist;
+	public String getNomePlaylist() {
+		return nomePlaylist.toString();
 	}
 	
 	public ObservableList<Music> getSongs() {

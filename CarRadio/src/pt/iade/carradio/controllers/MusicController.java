@@ -19,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import pt.iade.carradio.Main;
 import pt.iade.carradio.WindowManager;
 import pt.iade.carradio.models.Music;
 import pt.iade.carradio.models.Playlist;
@@ -57,7 +58,7 @@ public class MusicController {
     	WindowManager.openPlaylistWindow();
     }
     
-    private int playlistID = 1;
+    private int playlistID = 2;
  	private ObservableList<Music> songs = MusicDAO.getSongs(playlistID);
  	
     private String nomeMusica1 = MusicDAO.getNomeMusica1(playlistID);
@@ -80,18 +81,17 @@ public class MusicController {
     	
     	
     	
-    	
     	musicTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
     	    if (newSelection != null) {
     	    	
     	        musicName.setText(newSelection.getNomeMusica());
     	        artistaName.setText(newSelection.getNomeArtista());
     	        durationTime.setText(newSelection.toStringDuracao());
-    	        Image image = new Image(getClass().getResource(newSelection.getImagem()).toExternalForm());
-    	   //     System.out.println(image);
-    	        musicImage.setImage(image);
+    	        //Image imagem = new Image(Main.class.getResource(newSelection.getLinkImagem()).toString());
+    	        //musicImage.setImage(imagem);
+    	        }
     	    }
-    	});
+);
 	}
     	       
 

@@ -16,7 +16,7 @@ public class DBConnector {
 	public static Connection getConnection() {
 		try {
 			if (connection == null || connection.isClosed()) 
-				return DriverManager.getConnection(URL,USER,PASS);
+				connection = DriverManager.getConnection(URL,USER,PASS);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

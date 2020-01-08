@@ -20,22 +20,24 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 import pt.iade.carradio.controllers.PlaylistController;
+import pt.iade.carradio.controllers.UserController;
 import pt.iade.carradio.models.Music;
 import pt.iade.carradio.models.Playlist;
 
 public final class PlaylistDAO {
 	private PlaylistDAO() {}
 	
-	public static ObservableList<Playlist> getPlaylists(int playlistID) {
+	public static ObservableList<Playlist> getPlaylists(int userClicked) {
 		ObservableList<Playlist> playlists=FXCollections.observableArrayList();
 		Connection con = DBConnector.getConnection();
-		String sql = "SELECT NomePlaylist FROM Playlists WHERE PlaylistID = ?;";
+		String sql = "SELECT NomePlaylist FROM Playlists WHERE Utilizador = ?;";
 		try (PreparedStatement stat = con.prepareStatement(sql)) {
-			stat.setInt(1, playlistID);
+			stat.setInt(1, UserController.getUserClicked());
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
 					String nomePlaylist = rs.getString("NomePlaylist");
 					playlists.add(new Playlist(nomePlaylist));
+					System.out.println(nomePlaylist);
 				}
 			}
 		} catch (SQLException e) {
