@@ -33,7 +33,7 @@ public final class MusicDAO {
 		Connection con = DBConnector.getConnection();
 		String sql = "select m.NomeMusica, a.NomeArtista, m.Duracao, m.Imagem, p.PlaylistID from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID join Artistas a on a.ArtistaID=m.ArtistaID where mp.PlaylistID=?;";
 		try (PreparedStatement stat = con.prepareStatement(sql)) {
-			stat.setInt(1, playlistID);
+			stat.setInt(1, Playlist.getPlaylistID());
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
 					String nomeMusica = rs.getString("NomeMusica");
@@ -78,7 +78,7 @@ public final class MusicDAO {
 		Connection conn = DBConnector.getConnection();
 		String sql = "select m.NomeMusica from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID where mp.PlaylistID=?;";
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
-			stat.setInt(1, playlistID);
+			stat.setInt(1, Playlist.getPlaylistID());
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
 					nomeMusica1 = rs.getString("NomeMusica");
@@ -100,7 +100,7 @@ public static String getImagem1(int playlistID) {
 		Connection conn = DBConnector.getConnection();
 		String sql = "select m.Imagem from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID where mp.PlaylistID=?;";
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
-			stat.setInt(1, playlistID);
+			stat.setInt(1, Playlist.getPlaylistID());
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
 					imagem1 = rs.getString("Imagem");
@@ -142,7 +142,7 @@ public static String getNomeArtista1(int playlistID) {
 	Connection conn = DBConnector.getConnection();
 	String sql = "select a.NomeArtista from MusicasPlaylists mp join Musicas m on m.MusicaID=mp.MusicaID join Playlists p on p.PlaylistID=mp.PlaylistID join Artistas a on a.ArtistaID=m.ArtistaID where mp.PlaylistID=? LIMIT 1;";
 	try (PreparedStatement stat = conn.prepareStatement(sql)) {
-		stat.setInt(1, playlistID);
+		stat.setInt(1, Playlist.getPlaylistID());
 		try (ResultSet rs = stat.executeQuery()) {
 			while (rs.next()) {
 				nomeArtista1 = rs.getString("NomeArtista");

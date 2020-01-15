@@ -58,7 +58,7 @@ public class MusicController {
     	WindowManager.openPlaylistWindow();
     }
     
-    private int playlistID = 2;
+    private int playlistID = Playlist.getPlaylistID();
  	private ObservableList<Music> songs = MusicDAO.getSongs(playlistID);
  	
     private String nomeMusica1 = MusicDAO.getNomeMusica1(playlistID);

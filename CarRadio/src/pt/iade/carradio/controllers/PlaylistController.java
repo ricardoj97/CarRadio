@@ -57,8 +57,7 @@ public class PlaylistController {
     void BtnHipHop(MouseEvent event) {
     	WindowManager.openSongsWindow();
     }
-    
-    
+        
    private ObservableList<Playlist> playlists = PlaylistDAO.getPlaylists(UserController.getUserClicked());
        
 	@FXML

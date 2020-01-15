@@ -30,14 +30,14 @@ public final class PlaylistDAO {
 	public static ObservableList<Playlist> getPlaylists(int userClicked) {
 		ObservableList<Playlist> playlists=FXCollections.observableArrayList();
 		Connection con = DBConnector.getConnection();
-		String sql = "SELECT NomePlaylist FROM Playlists WHERE Utilizador = ?;";
+		String sql = "SELECT PlaylistID, NomePlaylist FROM Playlists WHERE Utilizador = ?;";
 		try (PreparedStatement stat = con.prepareStatement(sql)) {
 			stat.setInt(1, UserController.getUserClicked());
 			try (ResultSet rs = stat.executeQuery()) {
 				while (rs.next()) {
+					int playlistID = rs.getInt("PlaylistID");
 					String nomePlaylist = rs.getString("NomePlaylist");
-					playlists.add(new Playlist(nomePlaylist));
-					System.out.println(nomePlaylist);
+					playlists.add(new Playlist(nomePlaylist, playlistID));
 				}
 			}
 		} catch (SQLException e) {
@@ -45,6 +45,7 @@ public final class PlaylistDAO {
 		}
 		return playlists;
 	}
+	
 
 }
 
