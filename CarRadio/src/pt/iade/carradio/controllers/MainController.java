@@ -9,6 +9,11 @@ import javafx.scene.input.MouseEvent;
 import pt.iade.carradio.WindowManager;
 import pt.iade.carradio.models.Music;
 
+/**
+ * Classe que controla o menu principal.
+ * @author ricardo.joaquim
+ *
+ */
 public class MainController {
 	//Abrir GPS
     @FXML

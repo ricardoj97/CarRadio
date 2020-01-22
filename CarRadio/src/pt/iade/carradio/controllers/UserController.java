@@ -11,10 +11,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import pt.iade.carradio.WindowManager;
 import pt.iade.carradio.models.daos.MusicDAO;
-
+/**
+ * Classe que controla que utilizador foi escolhido.
+ * @author ricardo.joaquim
+ * @author bruno.flores
+ */
 public class UserController {
   
-    
     private static int userClicked = 0;
 
 

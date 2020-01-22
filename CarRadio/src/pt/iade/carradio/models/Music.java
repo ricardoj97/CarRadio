@@ -6,14 +6,14 @@ public class Music {
 	protected String nomeMusica;
 	protected String nomeArtista;
 	protected LocalTime duracao;
-	protected String imagem;
+	protected String linkImagem;
 	
-	public Music(String nomeMusica, String nomeArtista, LocalTime duracao, String imagem) {
+	public Music(String nomeMusica, String nomeArtista, LocalTime duracao, String linkImagem) {
 
 		this.nomeMusica = nomeMusica;
 		this.nomeArtista = nomeArtista;
 		this.duracao = duracao;
-		this.imagem = imagem;
+		this.linkImagem = linkImagem;
 		
 	}
 	public Music(String nomeMusica, String nomeArtista, LocalTime duracao) {
@@ -41,8 +41,13 @@ public class Music {
 		return nomeArtista.toString();
 	}
 
-	public String getImagem() {
-		return imagem;
+	public String getLinkImagem() {
+		return linkImagem;
+	}
+	
+	@Override
+	public String toString() {
+		return linkImagem;
 	}
 	
 

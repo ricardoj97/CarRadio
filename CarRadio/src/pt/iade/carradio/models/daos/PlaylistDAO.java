@@ -4,29 +4,27 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAccessor;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.cell.PropertyValueFactory;
 import pt.iade.carradio.controllers.PlaylistController;
 import pt.iade.carradio.controllers.UserController;
-import pt.iade.carradio.models.Music;
 import pt.iade.carradio.models.Playlist;
+
+/**
+ * Esta classe é a responsável por ir buscar à base dados os dados relativos às playlists.
+ * @author ricardo.joaquim 
+ * @author bruno.flores
+ *
+ */
 
 public final class PlaylistDAO {
 	private PlaylistDAO() {}
 	
+	/**
+	 * Método que retorna as playlists de acordo com o utilziador selecionado.
+	 * @param userClicked
+	 * @return
+	 */
 	public static ObservableList<Playlist> getPlaylists(int userClicked) {
 		ObservableList<Playlist> playlists=FXCollections.observableArrayList();
 		Connection con = DBConnector.getConnection();
@@ -45,6 +43,37 @@ public final class PlaylistDAO {
 		}
 		return playlists;
 	}
+	
+	/**
+	 * Método que retorna o nome da playlist selecionada
+	 */
+	
+	public static String getPlaylistChosen(int playlistID) {
+		String nomePlaylist1 = "";
+		Connection conn = DBConnector.getConnection();
+		String sql = "select NomePlaylist FROM Playlists WHERE PlaylistID = ?;";
+		try (PreparedStatement stat = conn.prepareStatement(sql)) {
+			stat.setInt(1, PlaylistController.getPlaylistClicked());
+			try (ResultSet rs = stat.executeQuery()) {
+				while (rs.next()) {
+					nomePlaylist1 = rs.getString("NomePlaylist");
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return nomePlaylist1;
+	}
+
+
+
+
+
+
+
+
+
+
 	
 
 }

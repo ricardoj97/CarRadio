@@ -8,8 +8,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
-
+/**
+ * Classe que inicializa o programa.
+ * @author ricardo.joaquim
+ * @author bruno.flores
+ */
 public class Main extends Application {
+	/**
+	 * Método que inicializa a janela inicial.
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		WindowManager.setPrimaryStage(primaryStage);

@@ -15,6 +15,11 @@ import pt.iade.carradio.controllers.UserController;
 import pt.iade.carradio.models.Music;
 import pt.iade.carradio.models.Playlist;
 
+/**
+ * Classe que controla as janelas da aplicação.
+ * @author ricardo.joaquim
+ * @author bruno.flores
+ */
 public class WindowManager {
 
 	private static Stage primaryStage;
@@ -91,7 +96,9 @@ public class WindowManager {
 		}
 	}*/
 	
-	//Método genérico de abrir uma nova janela
+	/**
+	 * Método genérico de abrir uma nova janela
+	 */
 	public static void openWindow(String viewPath, Stage window, 
 			Object controller) {
 		try {

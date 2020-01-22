@@ -7,7 +7,7 @@ public class Playlist {
 
 	private  String nomePlaylist;
 	private ObservableList <Music> songs;
-	private static  int playlistID;
+	private int playlistID;
 	
 	public Playlist(String nomePlaylist, ObservableList<Music> songs, int playlistID) {
 		this.nomePlaylist = nomePlaylist;
@@ -24,7 +24,7 @@ public class Playlist {
 		this.playlistID= playlistID;
 	}
 		
-	public static int getPlaylistID() {
+	public int getPlaylistID() {
 		 return playlistID;
 	}
 

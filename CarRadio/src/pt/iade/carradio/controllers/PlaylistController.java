@@ -1,15 +1,10 @@
-package pt.iade.carradio.controllers;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+package pt.iade.carradio.controllers;
 
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -19,8 +14,20 @@ import pt.iade.carradio.WindowManager;
 import pt.iade.carradio.models.Playlist;
 import pt.iade.carradio.models.daos.PlaylistDAO;
 
+/**
+ * Classe que mostra os dados obtidos na {@link pt.iade.carradio.models.daos.PlaylistDAO}.
+ * @author ricardo.joaquim
+ * @author bruno.flores
+ */
 public class PlaylistController {
 	
+	private static int playlistClicked = 0;
+
+
+    public static int getPlaylistClicked() {
+		return playlistClicked;
+	}
+
     @FXML
     private TableView<Playlist> playlistTV;
 
@@ -33,6 +40,7 @@ public class PlaylistController {
     @FXML
     private Label playlistName1;
 
+    
     @FXML
     void onHomeButton(MouseEvent event) {
     	WindowManager.openMainMenuWindow();
@@ -47,12 +55,7 @@ public class PlaylistController {
     void onUser(MouseEvent event) {
     	WindowManager.openUserWindow();
     }
-    
-    @FXML
-    void labelID(MouseEvent event) {
-    	WindowManager.openPlayerWindow();
-    }
-    
+
     @FXML
     void BtnHipHop(MouseEvent event) {
     	WindowManager.openSongsWindow();
@@ -66,10 +69,13 @@ public class PlaylistController {
 		playlistTC.setCellValueFactory(data -> new ReadOnlyStringWrapper(data.getValue().getNomePlaylist()));
 		playlistTV.setItems(playlists);
 		
-		// Abrir o Player carregando na Playlist
+/**
+ * Método que valida que playlist foi selecionada para carregar as músicas corretas.
+ */
 		playlistTV.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
+				playlistClicked = playlistTV.getSelectionModel().getSelectedItem().getPlaylistID();
 				WindowManager.openPlayerWindow();
 			}
 			
@@ -78,6 +84,7 @@ public class PlaylistController {
 	    }
 	
 }
+
 
 
 

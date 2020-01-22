@@ -4,6 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Classe que faz a conexão com a base dados online
+ * @author ricardo.joaquim
+ * @author bruno.flores
+ */
 public class DBConnector {
 	private static final String URL = "jdbc:mysql://remotemysql.com:3306/rPHgdBiJQH?useSSL=false";
 	private static final String PASS = "nR8UPayepw";
