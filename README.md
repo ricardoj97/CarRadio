@@ -18,10 +18,10 @@ Um exemplo de um produto que já exista no mercado: https://pt.gearbest.com/car-
 
 ## Cenários
 ### Cenário Principal
-O condutor ao ligar o carro, escolhe de imediato o seu utilizador para carregar as suas informações(contactos/playlists). Ao entrar no menú principal o utilizador poderá escolher o Icon de 'Musica' para abrir a lista das suas playlists e escolher a música que pretende ouvir ou poderá escolher ser aleatório. Poderá aumentar/diminuir o volume, mudar para a próxima música ou colocar em pausa.
+O condutor ao ligar o carro, escolhe de imediato o seu utilizador para carregar as suas informações(contactos/playlists). Ao entrar no menú principal o utilizador poderá escolher o Icon de 'Musica' para abrir a lista das suas playlists e escolher a música que pretende ouvir. Poderá aumentar/diminuir o volume ou colocar em pausa.
 
 ### Cenário Secundário
-* O utilizador caso pretenda adicionar alguma música a uma playlist deverá escolher o seu perfil, ir ao menu das musicas (menu principal), escolher o género (onde estão todas a musicas existentes no software), escolher a música, pressionar no icon de adicionar a playlist e escolher a playlist.
+* O utilizador caso pretenda visualizar que músicas existem na base dados por género pode ir ao menu das musicas (menu principal) e escolher o género (onde estão todas a musicas existentes no software).
 * Ao escolher o utilizador, para realizar uma chamada a algum contacto, o utilizador deverá escolher a opção telefone e marcar o número que pretende contactar ou escolher um contacto já existente na lista de contactos.
 
 ## Referências
