@@ -76,6 +76,7 @@ public class PlaylistController {
 			@Override
 			public void handle(MouseEvent event) {
 				playlistClicked = playlistTV.getSelectionModel().getSelectedItem().getPlaylistID();
+				System.out.println(playlistClicked);
 				WindowManager.openPlayerWindow();
 			}
 			
